@@ -1,0 +1,302 @@
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.cardbox {
+  width: 300px;
+  height: 200px;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#sidebarButton {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 9999;
+}
+
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: sandybrown;
+  color: #fff;
+  transition: left 0.3s ease;
+}
+
+#sidebar.open {
+  left: 0;
+}
+
+#closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#menu {
+  margin-top: 50px;
+  padding: 0;
+  list-style: none;
+}
+
+#menu li {
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+#menu li:hover {
+  background-color: #8000ff;
+}
+
+#menu li a:visited{
+  color: white;
+}
+
+#menu li a:active{
+  color: red;
+}
+
+#socialIcons {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#socialIcons {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.hidden {
+  display: none;
+}
+  
+  header {
+    color: #fff;
+    padding: 20px;
+  }
+  
+  h1 {
+    margin: 6;
+    text-align: center;
+  }
+  
+#iten{
+    padding: 20px;
+    text-align: center;    
+}
+
+#baixo{
+    text-align: center;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.wats{
+    position: fixed; bottom: 75px; right: 75px; z-index: 9999;
+}
+
+#baner{
+    width: 100%;
+    height: 300px;
+}
+
+#banerprim{
+    height: 250px;
+    width: 200px;
+    border-radius: 20px;
+}
+
+#banerprib{
+  height: 250px;
+  width: 200px;
+  border-radius: 20px;
+}
+
+.arms{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(128, 112, 112);
+}
+
+.gam{
+    text-align: center;
+    padding: 30px;
+    color: aquamarine;
+}
+
+.men{
+    display: flex;
+    justify-content: flex-start;
+    margin: auto;
+}
+
+table, tr, th{
+    width: 50%;
+    text-align: center;
+    font-size: 20px;
+}
+
+table, tr, td{
+    width: 400px;
+}
+
+table, tr, th{
+    border: 1px solid;
+}
+
+table{
+    border-collapse:collapse;
+    width: 50%;
+}
+
+#videos{
+    width: 800px;
+    height: 200px;
+    padding: 10px;
+    background-color: gray;
+    margin-left: 400px;
+    margin-right: 120px;
+}
+
+#pror{
+    background-color: peachpuff;
+    margin-left: 290px;
+    margin-right: 14.5%;
+}
+
+.banner-arom{
+    width: 200px;
+    height: 200px;
+    display: inline;
+    border-radius: 20px;
+    border-bottom: 3px solid sandybrown;
+    border-top: 3px solid sandybrown;
+
+}
+
+#bot {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 50%;
+    transform: translateX(50%);
+    z-index: 99;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+  }
+
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .center-button{
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 20px;
+  }
+
+  .footer-section{
+    align-content: space-between;
+  }
+
+  footer {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    font-family: Arial, sans-serif;
+  }  
+
+  #topButton {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 450px) {
+    #baner{
+      width: 100%;
+      margin: 0 0 0 0;
+      height: 100px;
+    }
+    .arms{
+      width: 100%;
+      height: 800px;
+    }
+    #aromg{
+      margin: -160% 0 0 30%;
+    }
+    
+    #banerprim{
+      margin: 20% 0 0 30%;
+    }
+
+    #banerprib{
+      margin: 20% 0 0 -200%;
+    }
+
+    #aron{
+      margin: 400px 0 0 -360px;
+    }
+    img{
+      margin: 5% 0 0 30%;
+    }
+    .wats{
+      margin-right: 70%;
+    }
+    footer{
+      width: 88%;
+      height: 40%;
+    }
+    .container{
+      width: 80%;
+      height: 40%;
+    }
+    section > #videos{
+      width: 94.5%;
+      margin-left: 0;
+    }
+
+    section > #pror{
+      margin-left: 0;
+    }
+  }

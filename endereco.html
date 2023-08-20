@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Confirmar Compra</title>
+  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+  <style>
+    .card-details {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .card-details input {
+      margin-bottom: 10px;
+    }
+
+    .card-details-row {
+      display: flex;
+    }
+
+    .card-details-row input {
+      margin-right: 10px;
+    }
+
+    .product-image {
+      max-width: 200px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Confirme sua compra</h1>
+
+  <form id="formCompra">
+    <label for="endereco">Endereço:</label>
+    <input type="text" id="endereco" name="endereco" required><br><br>
+
+    <label for="pix">PIX:</label>
+    <div id="qrcode"></div><br>
+    <button type="button" onclick="gerarImagemExemplo()">Gerar QR Code PIX</button><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <div class="card-details">
+      <label for="numeroCartao">Número do Cartão:</label>
+      <input type="text" id="numeroCartao" name="numeroCartao" required>
+      
+      <div class="card-details-row">
+        <label for="vencimento">Vencimento:</label>
+        <input type="text" id="vencimento" name="vencimento" required>
+      </div>
+      
+      <div class="card-details-row">
+        <label for="cvc">CVC:</label>
+        <input type="text" id="cvc" name="cvc" required>
+      </div>
+    </div>
+        
+    <button type="submit" onclick="confirmarCompra(event)">Confirmar Compra</button>
+    <button type="button" onclick="voltarPagina()">Voltar</button>
+  </form>
+
+  <script>
+    function preencherDetalhesDoProduto() {
+      document.getElementById('produto').textContent = "Produto: " + produtoSelecionado.nome;
+      document.getElementById('preco').textContent = "Preço: " + produtoSelecionado.preco;
+      document.getElementById('quantidade').textContent = "Quantidade: " + produtoSelecionado.quantidade;
+    }
+
+    function gerarImagemExemplo() {
+      var imagemExemplo = "img/QRCODE.jpg";
+      var qrcodeElement = document.getElementById("qrcode");
+
+      qrcodeElement.innerHTML = '<img src="' + imagemExemplo + '" alt="Imagem Exemplo">';
+    }
+
+    function confirmarCompra(event) {
+      event.preventDefault();
+
+      var endereco = document.getElementById('endereco').value;
+      var email = document.getElementById('email').value;
+      var numeroCartao = document.getElementById('numeroCartao').value;
+      var vencimento = document.getElementById('vencimento').value;
+      var cvc = document.getElementById('cvc').value;
+
+      if (endereco === "" || email === "" || numeroCartao === "" || vencimento === "" || cvc === "") {
+        alert("Por favor, preencha todos os campos obrigatórios.");
+        return;
+      }
+
+      // Exibir mensagem de confirmação
+      alert("Compra confirmada! Detalhes enviados para o email: " + email);
+
+      // Restaurar o formulário após a confirmação
+      document.getElementById('formCompra').reset();
+      document.getElementById('qrcode').innerHTML = '';
+    }
+
+    function voltarPagina() {
+      window.location.href = "index.html"; // Substitua "pagina-anterior.html" pela URL da página desejada
+    }
+
+    // Chamar a função para preencher os detalhes do produto assim que a página for carregada
+    preencherDetalhesDoProduto();
+  </script>
+</body>
+</html>
